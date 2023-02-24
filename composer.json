@@ -21,6 +21,6 @@
   },
   "scripts": {
     "test": "./vendor/bin/phpunit tests --colors=always",
-    "fix": "php vendor/bin/php-cs-fixer fix --rules=@PSR12,binary_operator_spaces ./"
+    "fix": "php vendor/bin/php-cs-fixer fix --rules=@PSR12,no_extra_blank_lines,blank_line_after_namespace,method_argument_space ./"
   }
 }
