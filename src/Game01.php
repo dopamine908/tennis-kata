@@ -14,6 +14,9 @@ class Game01
         if ($this->secondPlayerScore===2) {
             return 'Love Thirty';
         }
+        if ($this->secondPlayerScore===3) {
+            return 'Love Forty';
+        }
         if ($this->firstPlayerScore === 1) {
             return 'Fifteen Love';
         }
