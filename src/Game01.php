@@ -14,6 +14,9 @@ class Game01
 2=>'Thirty',
 3=>'Forty'
 ];
+        if ($this->firstPlayerScore-$this->secondPlayerScore>=2&&$this->firstPlayerScore>3) {
+            return 'First Player Win';
+        }
         if ($this->secondPlayerScore-$this->firstPlayerScore===1&&$this->firstPlayerScore>=3) {
             return 'Second Player Adv';
         }
