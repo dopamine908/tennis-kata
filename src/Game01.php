@@ -13,6 +13,9 @@ class Game01
         if ($this->firstPlayerScore === 2) {
             return 'Thirty Love';
         }
+        if ($this->firstPlayerScore === 3) {
+            return 'Forty Love';
+        }
         return 'Love All';
     }
     public function addFirstPlayerScore()
