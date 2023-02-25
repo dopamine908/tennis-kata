@@ -14,14 +14,11 @@ class Game01
 2=>'Thirty',
 3=>'Forty'
 ];
-        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore===1) {
-            return 'Fifteen All';
-        }
-        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore===2) {
-            return 'Thirty All';
-        }
         if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore>=3) {
             return 'Deuce';
+        }
+        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore>=1) {
+            return "{$lookup[$this->firstPlayerScore]} All";
         }
         if ($this->secondPlayerScore>=1||$this->firstPlayerScore >= 1) {
             return "{$lookup[$this->firstPlayerScore]} {$lookup[$this->secondPlayerScore]}";
