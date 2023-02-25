@@ -20,7 +20,7 @@ class Game01
         if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore===2) {
             return 'Thirty All';
         }
-        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore===3) {
+        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore>=3) {
             return 'Deuce';
         }
         if ($this->secondPlayerScore>=1||$this->firstPlayerScore >= 1) {
