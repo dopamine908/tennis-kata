@@ -14,11 +14,11 @@ class Game01
 2=>'Thirty',
 3=>'Forty'
 ];
-        if ($this->secondPlayerScore>=1) {
-            return "Love {$lookup[$this->secondPlayerScore]}";
+        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore===1) {
+            return 'Fifteen All';
         }
-        if ($this->firstPlayerScore >= 1) {
-            return "{$lookup[$this->firstPlayerScore]} Love";
+        if ($this->secondPlayerScore>=1||$this->firstPlayerScore >= 1) {
+            return "{$lookup[$this->firstPlayerScore]} {$lookup[$this->secondPlayerScore]}";
         }
         return 'Love All';
     }
