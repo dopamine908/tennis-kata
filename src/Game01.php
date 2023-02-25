@@ -14,7 +14,10 @@ class Game01
 2=>'Thirty',
 3=>'Forty'
 ];
-        if ($this->firstPlayerScore-$this->secondPlayerScore===1&&$this->secondPlayerScore>0) {
+        if ($this->secondPlayerScore-$this->firstPlayerScore===1&&$this->firstPlayerScore>=3) {
+            return 'Second Player Adv';
+        }
+        if ($this->firstPlayerScore-$this->secondPlayerScore===1&&$this->secondPlayerScore>=3) {
             return 'First Player Adv';
         }
         if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore>=3) {
