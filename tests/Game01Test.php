@@ -160,7 +160,7 @@ class Game01Test extends TestCase
         $game->addSecondPlayerScore();
         $this->assertEquals('First Player Win', $game->score());
     }
-    public function testFirstPlayerWinWithDuece2()
+    public function testFirstPlayerWin1()
     {
         $game = new Game01();
         $game->addFirstPlayerScore();
@@ -171,7 +171,7 @@ class Game01Test extends TestCase
         $game->addSecondPlayerScore();
         $this->assertEquals('First Player Win', $game->score());
     }
-    public function testFirstPlayerWinWithDuece3()
+    public function testFirstPlayerWin2()
     {
         $game = new Game01();
         $game->addFirstPlayerScore();
@@ -179,5 +179,18 @@ class Game01Test extends TestCase
         $game->addFirstPlayerScore();
         $game->addFirstPlayerScore();
         $this->assertEquals('First Player Win', $game->score());
+    }
+    public function testSecondPlayerWinWithDuece1()
+    {
+        $game = new Game01();
+        $game->addFirstPlayerScore();
+        $game->addFirstPlayerScore();
+        $game->addFirstPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $this->assertEquals('Second Player Win', $game->score());
     }
 }
