@@ -20,6 +20,9 @@ class Game02
         if ($this->secondPlayerScore===1) {
             return 'Love Fifteen';
         }
+        if ($this->secondPlayerScore===2) {
+            return 'Love Thirty';
+        }
         return 'Love All';
     }
     public function addFirstPlayerScore()
