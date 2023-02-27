@@ -8,24 +8,17 @@ class Game02
     public int$secondPlayerScore=0;
     public function score()
     {
-        if ($this->firstPlayerScore===1) {
-            return 'Fifteen Love';
+        $lookup=
+[
+0=>'Love',
+1=>'Fifteen',
+2=>'Thirty',
+3=>'Forty',
+];
+        if ($this->firstPlayerScore>=1||$this->secondPlayerScore>=1) {
+            return "{$lookup[$this->firstPlayerScore]} {$lookup[$this->secondPlayerScore]}";
         }
-        if ($this->firstPlayerScore===2) {
-            return 'Thirty Love';
-        }
-        if ($this->firstPlayerScore===3) {
-            return 'Forty Love';
-        }
-        if ($this->secondPlayerScore===1) {
-            return 'Love Fifteen';
-        }
-        if ($this->secondPlayerScore===2) {
-            return 'Love Thirty';
-        }
-        if ($this->secondPlayerScore===3) {
-            return 'Love Forty';
-        }
+
         return 'Love All';
     }
     public function addFirstPlayerScore()
