@@ -17,7 +17,7 @@ class Game02
 ];
         if ($this->firstPlayerScore>=1||$this->secondPlayerScore>=1) {
             if ($this->firstPlayerScore===$this->secondPlayerScore) {
-                if ($this->firstPlayerScore===3) {
+                if ($this->firstPlayerScore>=3) {
                     return 'Duece';
                 }
                 return "{$lookup[$this->firstPlayerScore]} All";
