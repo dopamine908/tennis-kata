@@ -5,6 +5,7 @@ namespace Src;
 class Game03
 {
     private int $firstPlayerScore=0;
+    private int $secondPlayerScore=0;
     public function score()
     {
         $lookup=[
@@ -16,10 +17,17 @@ class Game03
         if ($this->firstPlayerScore>=1) {
             return "{$lookup[$this->firstPlayerScore]} Love";
         }
+        if ($this->secondPlayerScore===1) {
+            return 'Love Fifteen';
+        }
         return 'Love All';
     }
     public function addFirstPlayerScore()
     {
         $this->firstPlayerScore++;
+    }
+    public function addSecondPlayerScore()
+    {
+        $this->secondPlayerScore++;
     }
 }
