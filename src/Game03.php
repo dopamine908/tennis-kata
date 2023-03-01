@@ -7,14 +7,14 @@ class Game03
     private int $firstPlayerScore=0;
     public function score()
     {
-        if ($this->firstPlayerScore===1) {
-            return 'Fifteen Love';
-        }
-        if ($this->firstPlayerScore===2) {
-            return 'Thirty Love';
-        }
-        if ($this->firstPlayerScore===3) {
-            return 'Forty Love';
+        $lookup=[
+0=>'Love',
+1=>'Fifteen',
+2=>'Thirty',
+3=>'Forty',
+];
+        if ($this->firstPlayerScore>=1) {
+            return "{$lookup[$this->firstPlayerScore]} Love";
         }
         return 'Love All';
     }
