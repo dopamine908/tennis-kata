@@ -1,0 +1,15 @@
+<?php
+
+namespace Test;
+
+use Src\Game03;
+use PHPUnit\Framework\TestCase;
+
+class Game03Test extends TestCase
+{
+    public function testLoveAll()
+    {
+        $game=new Game03();
+        $this->assertEquals('Love All', $game->score());
+    }
+}
