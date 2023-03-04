@@ -15,7 +15,7 @@ class Game03
 3=>'Forty',
 ];
         if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore>0) {
-            return 'Fifteen All';
+            return "{$lookup[$this->firstPlayerScore]} All";
         }
         if ($this->firstPlayerScore>=1) {
             return "{$lookup[$this->firstPlayerScore]} Love";
