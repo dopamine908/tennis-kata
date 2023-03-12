@@ -12,4 +12,11 @@ class Game04Test extends TestCase
         $game=new Game04();
         $this->assertEquals('Love All', $game->score());
     }
+
+    public function testFifteenAll()
+    {
+        $game=new Game04();
+        $game->addFisrstPlayerScore();
+        $this->assertEquals('Fifteen All', $game->score());
+    }
 }
