@@ -19,6 +19,10 @@ class Game04
             return 'Thirty Love';
         }
 
+        if ($this->firstPlayerScore===3) {
+            return 'Forty Love';
+        }
+
         return 'Love All';
     }
 }
