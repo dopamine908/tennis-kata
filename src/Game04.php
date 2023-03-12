@@ -12,7 +12,7 @@ class Game04
     public function score()
     {
         if ($this->firstPlayerScore===1) {
-            return 'Fifteen All';
+            return 'Fifteen Love';
         }
         return 'Love All';
     }

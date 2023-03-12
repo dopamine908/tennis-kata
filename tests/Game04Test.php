@@ -17,6 +17,6 @@ class Game04Test extends TestCase
     {
         $game=new Game04();
         $game->addFisrstPlayerScore();
-        $this->assertEquals('Fifteen All', $game->score());
+        $this->assertEquals('Fifteen Love', $game->score());
     }
 }
