@@ -13,14 +13,14 @@ class Game04Test extends TestCase
         $this->assertEquals('Love All', $game->score());
     }
 
-    public function testFifteenAll()
+    public function testFifteenLove()
     {
         $game=new Game04();
         $game->addFisrstPlayerScore();
         $this->assertEquals('Fifteen Love', $game->score());
     }
 
-    public function testThirtyAll()
+    public function testThirtyLove()
     {
         $game=new Game04();
         $game->addFisrstPlayerScore();
@@ -28,7 +28,7 @@ class Game04Test extends TestCase
         $this->assertEquals('Thirty Love', $game->score());
     }
 
-    public function testFortyAll()
+    public function testFortyLove()
     {
         $game=new Game04();
         $game->addFisrstPlayerScore();
