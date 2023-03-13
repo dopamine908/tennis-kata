@@ -23,6 +23,10 @@ class Game04
             return 'First Player Win';
         }
 
+        if ($this->secondPlayerScore-$this->firstPlayerScore>=2&&$this->secondPlayerScore>=4) {
+            return 'Second Player Win';
+        }
+
         if ($this->firstPlayerScore-$this->secondPlayerScore===1&&$this->secondPlayerScore>=3) {
             return 'First Player Adv';
         }
