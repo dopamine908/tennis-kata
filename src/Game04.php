@@ -23,6 +23,10 @@ class Game04
             return 'First Player Adv';
         }
 
+        if ($this->secondPlayerScore-$this->firstPlayerScore===1&&$this->firstPlayerScore>=3) {
+            return 'Second Player Adv';
+        }
+
         if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore>0) {
             if ($this->firstPlayerScore>=3) {
                 return 'Deuce';
