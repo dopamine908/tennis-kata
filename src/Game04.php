@@ -23,8 +23,13 @@ class Game04
             if ($this->firstPlayerScore===1) {
                 return 'Fifteen All';
             }
+
             if ($this->firstPlayerScore===2) {
                 return 'Thirty All';
+            }
+
+            if ($this->firstPlayerScore===3) {
+                return 'Deuce';
             }
         }
 
