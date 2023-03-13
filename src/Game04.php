@@ -31,6 +31,10 @@ class Game04
             if ($this->firstPlayerScore===3) {
                 return 'Deuce';
             }
+
+            if ($this->firstPlayerScore===4) {
+                return 'Deuce';
+            }
         }
 
         if ($this->firstPlayerScore>0||$this->secondPlayerScore>0) {
