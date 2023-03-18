@@ -168,4 +168,17 @@ class Game05Test extends TestCase
         $game->addFirstPlayerScore();
         $this->assertEquals('First Player Win', $game->score());
     }
+    public function testSecondPlayerWinWithDeuce()
+    {
+        $game=new Game05();
+        $game->addFirstPlayerScore();
+        $game->addFirstPlayerScore();
+        $game->addFirstPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $game->addSecondPlayerScore();
+        $this->assertEquals('Second Player Win', $game->score());
+    }
 }
