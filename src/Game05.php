@@ -30,6 +30,10 @@ class Game05
             return 'Deuce';
         }
 
+        if ($this->firstPlayerScore===$this->secondPlayerScore&&$this->firstPlayerScore===4) {
+            return 'Deuce';
+        }
+
         if ($this->firstPlayerScore>0||$this->secondPlayerScore>0) {
             return "{$lookup[$this->firstPlayerScore]} {$lookup[$this->secondPlayerScore]}";
         }
