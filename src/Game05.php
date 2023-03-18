@@ -32,6 +32,10 @@ class Game05
             return 'Love Fifteen';
         }
 
+        if ($this->secondPlayerScore===2) {
+            return 'Love Thirty';
+        }
+
         return 'Love All';
     }
 }
