@@ -18,6 +18,10 @@ class Game05
     {
         $lookup=['Love','Fifteen','Thirty','Forty'];
 
+        if ($this->firstPlayerScore-$this->secondPlayerScore===2&&$this->firstPlayerScore>=4) {
+            return 'First Player Win';
+        }
+
         if ($this->firstPlayerScore-$this->secondPlayerScore===1&&$this->secondPlayerScore>=3) {
             return 'First Player Adv';
         }
