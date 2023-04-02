@@ -11,22 +11,20 @@ class Game06
 
     public function score()
     {
-        if ($this->firstPlayerScore === $this->secondPlayerScore) {
-            if ($this->firstPlayerScore >= 3) {
+        if ($this->isScoreSame()) {
+            if ($this->isDeuce()) {
                 return 'Deuce';
             }
-            return "{$this->scoreLookUp[$this->firstPlayerScore]} All";
+            return $this->sameScore();
         }
 
-        if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
-            if ($this->secondPlayerScore >= 3) {
-                if ($this->firstPlayerScore - $this->secondPlayerScore === 1) {
-                    return 'First Player Adv';
-                }
+        if ($this->someoneReadyToWin()) {
+            if ($this->isAdv()) {
+                return $this->advScore();
             }
-
-            return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
         }
+
+        return $this->normalScore();
     }
 
     public function addFirstPlayerScore()
@@ -37,5 +35,61 @@ class Game06
     public function addSecondPlayerScore()
     {
         $this->secondPlayerScore++;
+    }
+
+    /**
+     * @return bool
+     */
+    private function someoneReadyToWin(): bool
+    {
+        return $this->firstPlayerScore >= 3 || $this->secondPlayerScore >= 3;
+    }
+
+    /**
+     * @return string
+     */
+    private function advScore(): string
+    {
+        return $this->firstPlayerScore > $this->secondPlayerScore ? 'First Player Adv' : 'Second Player Adv';
+    }
+
+    /**
+     * @return bool
+     */
+    private function isAdv(): bool
+    {
+        return abs($this->secondPlayerScore - $this->firstPlayerScore) === 1;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isScoreSame(): bool
+    {
+        return $this->firstPlayerScore === $this->secondPlayerScore;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isDeuce(): bool
+    {
+        return $this->firstPlayerScore >= 3;
+    }
+
+    /**
+     * @return string
+     */
+    private function sameScore(): string
+    {
+        return "{$this->scoreLookUp[$this->firstPlayerScore]} All";
+    }
+
+    /**
+     * @return string
+     */
+    private function normalScore(): string
+    {
+        return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
     }
 }
