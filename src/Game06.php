@@ -19,9 +19,14 @@ class Game06
         }
 
         if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
+            if ($this->secondPlayerScore >= 3) {
+                if ($this->firstPlayerScore - $this->secondPlayerScore === 1) {
+                    return 'First Player Adv';
+                }
+            }
+
             return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
         }
-
     }
 
     public function addFirstPlayerScore()
