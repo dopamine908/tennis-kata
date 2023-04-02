@@ -11,12 +11,8 @@ class Game06
 
     public function score()
     {
-        if ($this->firstPlayerScore >= 1) {
-            return "{$this->scoreLookUp[$this->firstPlayerScore]} Love";
-        }
-
-        if ($this->secondPlayerScore === 1) {
-            return "Love {$this->scoreLookUp[$this->secondPlayerScore]}";
+        if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
+            return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
         }
 
         return 'Love All';
