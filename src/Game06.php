@@ -6,11 +6,11 @@ class Game06
 {
 
     private $firstPlayerScore = 0;
-    private $scoreLookUp = ["Love", "Fifteen", "Thirty"];
+    private $scoreLookUp = ["Love", "Fifteen", "Thirty", "Forty"];
 
     public function score()
     {
-        if ($this->firstPlayerScore === 1 || $this->firstPlayerScore === 2) {
+        if ($this->firstPlayerScore >= 1) {
             return "{$this->scoreLookUp[$this->firstPlayerScore]} Love";
         }
 
