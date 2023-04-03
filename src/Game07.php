@@ -5,22 +5,14 @@ namespace Src;
 class Game07
 {
 
-    private $firstPlayerScore;
+    private $firstPlayerScore = 0;
     private $scoreLookUp = ["Love", "Fifteen", "Thirty", "Forty"];
-    private $secondPlayerScore;
+    private $secondPlayerScore = 0;
 
     public function score()
     {
-        if ($this->firstPlayerScore >= 1) {
-            return "{$this->scoreLookUp[$this->firstPlayerScore]} Love";
-        }
-
-        if ($this->secondPlayerScore === 1) {
-            return "Love Fifteen";
-        }
-
-        if ($this->secondPlayerScore === 2) {
-            return "Love Thirty";
+        if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
+            return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
         }
 
         return 'Love All';
