@@ -11,8 +11,11 @@ class Game07
 
     public function score()
     {
-        if ($this->firstPlayerScore === $this->secondPlayerScore) {
-            return "{$this->scoreLookUp[$this->firstPlayerScore]} All";
+        if ($this->isScoreSame()) {
+            if ($this->isDeuce()) {
+                return $this->deuceScore();
+            }
+            return $this->sameScore();
         }
 
         return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
@@ -26,5 +29,37 @@ class Game07
     public function addSecondPlayerScore()
     {
         $this->secondPlayerScore++;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isScoreSame(): bool
+    {
+        return $this->firstPlayerScore === $this->secondPlayerScore;
+    }
+
+    /**
+     * @return bool
+     */
+    private function isDeuce(): bool
+    {
+        return $this->firstPlayerScore >= 3;
+    }
+
+    /**
+     * @return string
+     */
+    private function deuceScore(): string
+    {
+        return 'Deuce';
+    }
+
+    /**
+     * @return string
+     */
+    private function sameScore(): string
+    {
+        return "{$this->scoreLookUp[$this->firstPlayerScore]} All";
     }
 }
