@@ -22,6 +22,10 @@ class Game06
             if ($this->isAdv()) {
                 return $this->advScore();
             }
+
+            if ($this->firstPlayerScore - $this->secondPlayerScore >= 2) {
+                return 'First Player Win';
+            }
         }
 
         return $this->normalScore();
@@ -42,7 +46,7 @@ class Game06
      */
     private function someoneReadyToWin(): bool
     {
-        return $this->firstPlayerScore >= 3 || $this->secondPlayerScore >= 3;
+        return $this->firstPlayerScore > 3 || $this->secondPlayerScore > 3;
     }
 
     /**
