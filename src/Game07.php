@@ -12,15 +12,10 @@ class Game07
     public function score()
     {
         if ($this->firstPlayerScore === $this->secondPlayerScore) {
-            if ($this->firstPlayerScore === 1) {
-                return 'Fifteen All';
-            }
-            return 'Love All';
+            return "{$this->scoreLookUp[$this->firstPlayerScore]} All";
         }
 
-        if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
-            return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
-        }
+        return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
     }
 
     public function addFirstPlayerScore()
