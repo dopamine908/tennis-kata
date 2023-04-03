@@ -19,12 +19,12 @@ class Game06
         }
 
         if ($this->someoneReadyToWin()) {
-            if ($this->isAdv()) {
+            if ($this->isSomeoneAdv()) {
                 return $this->advScore();
             }
 
-            if ($this->firstPlayerScore - $this->secondPlayerScore >= 2) {
-                return 'First Player Win';
+            if ($this->isSomeoneWin()) {
+                return $this->winScore();
             }
         }
 
@@ -60,7 +60,7 @@ class Game06
     /**
      * @return bool
      */
-    private function isAdv(): bool
+    private function isSomeoneAdv(): bool
     {
         return abs($this->secondPlayerScore - $this->firstPlayerScore) === 1;
     }
@@ -95,5 +95,24 @@ class Game06
     private function normalScore(): string
     {
         return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
+    }
+
+    /**
+     * @return string
+     */
+    private function winScore(): string
+    {
+        if ($this->firstPlayerScore > $this->secondPlayerScore) {
+            return 'First Player Win';
+        }
+        return 'Second Player Win';
+    }
+
+    /**
+     * @return bool
+     */
+    private function isSomeoneWin(): bool
+    {
+        return abs($this->firstPlayerScore - $this->secondPlayerScore) >= 2;
     }
 }
