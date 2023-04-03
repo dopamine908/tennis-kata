@@ -17,9 +17,13 @@ class Game07
             }
             return $this->sameScore();
         }
-
-        if ($this->firstPlayerScore - $this->secondPlayerScore === 1 && $this->firstPlayerScore > 3) {
-            return 'First Player Adv';
+        if ($this->firstPlayerScore > 3 || $this->secondPlayerScore > 3) {
+            if (abs($this->firstPlayerScore - $this->secondPlayerScore) === 1) {
+                if ($this->firstPlayerScore > $this->secondPlayerScore) {
+                    return 'First Player Adv';
+                }
+                return 'Second Player Adv';
+            }
         }
 
         return "{$this->scoreLookUp[$this->firstPlayerScore]} {$this->scoreLookUp[$this->secondPlayerScore]}";
