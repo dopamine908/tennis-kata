@@ -24,6 +24,11 @@ class Game08
         }
 
         if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
+            if ($this->firstPlayerScore - $this->secondPlayerScore === 1) {
+                if ($this->firstPlayerScore > 3) {
+                    return 'First Player Adv';
+                }
+            }
             return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
         }
     }
