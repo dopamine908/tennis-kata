@@ -120,6 +120,17 @@ class Game08Test extends TestCase
         $this->scoreShouldBe('First Player Adv');
     }
 
+
+    /**
+     * @test
+     */
+    public function second_player_adv()
+    {
+        $this->gitvenDeuce();
+        $this->givenSecondPlayerScore(1);
+        $this->scoreShouldBe('Second Player Adv');
+    }
+
     /**
      * @param $score
      * @return void

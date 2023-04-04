@@ -23,14 +23,16 @@ class Game08
             return $this->sameScore();
         }
 
-        if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
-            if ($this->firstPlayerScore - $this->secondPlayerScore === 1) {
-                if ($this->firstPlayerScore > 3) {
+        if ($this->firstPlayerScore > 3 || $this->secondPlayerScore > 3) {
+            if (abs($this->firstPlayerScore - $this->secondPlayerScore) === 1) {
+                if ($this->firstPlayerScore > $this->secondPlayerScore) {
                     return 'First Player Adv';
                 }
+                return 'Second Player Adv';
             }
-            return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
         }
+
+        return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
     }
 
     public function addFirstPlayerScore()
