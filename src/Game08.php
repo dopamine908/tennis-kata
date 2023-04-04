@@ -20,8 +20,8 @@ class Game08
             return "{$this->scoreLookup[$this->firstPlayerScore]} Love";
         }
 
-        if ($this->secondPlayerScore === 1) {
-            return 'Love Fifteen';
+        if ($this->secondPlayerScore >= 1) {
+            return "Love {$this->scoreLookup[$this->secondPlayerScore]}";
         }
 
         return 'Love All';
