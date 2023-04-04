@@ -30,6 +30,13 @@ class Game08
                 }
                 return 'Second Player Adv';
             }
+
+            if (abs($this->firstPlayerScore - $this->secondPlayerScore) === 2) {
+                if ($this->firstPlayerScore > $this->secondPlayerScore) {
+                    return 'First Player Win';
+                }
+                return 'Second Player Win';
+            }
         }
 
         return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";

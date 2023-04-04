@@ -105,7 +105,7 @@ class Game08Test extends TestCase
      */
     public function deuce()
     {
-        $this->gitvenDeuce();
+        $this->givenDeuce();
         $this->scoreShouldBe('Deuce');
     }
 
@@ -115,7 +115,7 @@ class Game08Test extends TestCase
      */
     public function first_player_adv()
     {
-        $this->gitvenDeuce();
+        $this->givenDeuce();
         $this->givenFirstPlayerScore(1);
         $this->scoreShouldBe('First Player Adv');
     }
@@ -126,9 +126,20 @@ class Game08Test extends TestCase
      */
     public function second_player_adv()
     {
-        $this->gitvenDeuce();
+        $this->givenDeuce();
         $this->givenSecondPlayerScore(1);
         $this->scoreShouldBe('Second Player Adv');
+    }
+
+
+    /**
+     * @test
+     */
+    public function first_player_win()
+    {
+        $this->givenDeuce();
+        $this->givenFirstPlayerScore(2);
+        $this->scoreShouldBe('First Player Win');
     }
 
     /**
@@ -171,7 +182,7 @@ class Game08Test extends TestCase
     /**
      * @return void
      */
-    private function gitvenDeuce(): void
+    private function givenDeuce(): void
     {
         $this->givenFirstPlayerScore(3);
         $this->givenSecondPlayerScore(3);
