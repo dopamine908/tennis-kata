@@ -16,6 +16,9 @@ class Game08
 
     public function score()
     {
+        if ($this->firstPlayerScore === $this->secondPlayerScore && $this->firstPlayerScore > 0) {
+            return 'Fifteen All';
+        }
         if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
             return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
         }
