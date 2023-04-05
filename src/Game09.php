@@ -15,8 +15,8 @@ class Game09
             return "{$this->scoreLookup[$this->firstPlayerScore]} Love";
         }
 
-        if ($this->secondPlayerScore === 1) {
-            return "Love Fifteen";
+        if ($this->secondPlayerScore >= 1) {
+            return "Love {$this->scoreLookup[$this->secondPlayerScore]}";
         }
 
         return 'Love All';
@@ -27,7 +27,7 @@ class Game09
         $this->firstPlayerScore++;
     }
 
-    public function addSecondPlayerScore()
+    public function givenSecondPlayerScore()
     {
         $this->secondPlayerScore++;
     }
