@@ -47,6 +47,16 @@ class Game09Test extends TestCase
         $this->scoreShouldBe('Forty Love');
     }
 
+
+    /**
+     * @test
+     */
+    public function love_fifteen()
+    {
+        $this->game->addSecondPlayerScore();
+        $this->scoreShouldBe('Love Fifteen');
+    }
+
     /**
      * @param $score
      * @return void
