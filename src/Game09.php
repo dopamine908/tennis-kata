@@ -6,7 +6,7 @@ class Game09
 {
 
     private $firstPlayerScore = 0;
-    private $scoreLookup = ["Love", "Fifteen", "Thirty"];
+    private $scoreLookup = ["Love", "Fifteen", "Thirty", "Forty"];
 
     public function score()
     {
