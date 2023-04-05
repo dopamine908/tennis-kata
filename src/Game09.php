@@ -12,6 +12,10 @@ class Game09
     public function score()
     {
         if ($this->firstPlayerScore === $this->secondPlayerScore) {
+            if ($this->firstPlayerScore === 3) {
+                return 'Deuce';
+            }
+
             return "{$this->scoreLookup[$this->firstPlayerScore]} All";
         }
 
