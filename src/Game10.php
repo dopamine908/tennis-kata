@@ -6,6 +6,7 @@ class Game10
 {
 
     private $firstPlayerScore = 0;
+    private $secondPlayerScore = 0;
     private $scoreLookup = [
         'Love',
         'Fifteen',
@@ -19,11 +20,20 @@ class Game10
             return "{$this->scoreLookup[$this->firstPlayerScore]} Love";
         }
 
+        if ($this->secondPlayerScore === 1) {
+            return "Love Fifteen";
+        }
+
         return 'Love All';
     }
 
     public function addFirstPayerScore()
     {
         $this->firstPlayerScore++;
+    }
+
+    public function addSecondPlayerScore()
+    {
+        $this->secondPlayerScore++;
     }
 }
