@@ -30,6 +30,12 @@ class Game10
             }
         }
 
+        if ($this->secondPlayerScore > 3) {
+            if ($this->secondPlayerScore - $this->firstPlayerScore === 1) {
+                return 'Second Player Win';
+            }
+        }
+
         return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
     }
 
