@@ -53,8 +53,18 @@ class Game10Test extends TestCase
      */
     public function love_fifteen()
     {
-        $this->game->addSecondPlayerScore();
+        $this->givenSecondPlayerScore(1);
         $this->scoreShouldBe('Love Fifteen');
+    }
+
+
+    /**
+     * @test
+     */
+    public function love_thirty()
+    {
+        $this->givenSecondPlayerScore(2);
+        $this->scoreShouldBe('Love Thirty');
     }
 
     /**
@@ -80,6 +90,17 @@ class Game10Test extends TestCase
     {
         for ($i = 0; $i < $times; $i++) {
             $this->game->addFirstPayerScore();
+        }
+    }
+
+    /**
+     * @param $times
+     * @return void
+     */
+    private function givenSecondPlayerScore($times): void
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $this->game->addSecondPlayerScore();
         }
     }
 
