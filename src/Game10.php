@@ -16,15 +16,15 @@ class Game10
 
     public function score()
     {
-        if ($this->firstPlayerScore >= 1) {
-            return "{$this->scoreLookup[$this->firstPlayerScore]} Love";
+        if ($this->firstPlayerScore === $this->secondPlayerScore) {
+            if ($this->firstPlayerScore === 1) {
+                return 'Fifteen All';
+            }
+
+            return 'Love All';
         }
 
-        if ($this->secondPlayerScore >= 1) {
-            return "Love {$this->scoreLookup[$this->secondPlayerScore]}";
-        }
-
-        return 'Love All';
+        return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
     }
 
     public function addFirstPayerScore()
