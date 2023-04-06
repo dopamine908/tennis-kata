@@ -10,11 +10,12 @@ class Game10
         'Love',
         'Fifteen',
         'Thirty',
+        'Forty',
     ];
 
     public function score()
     {
-        if ($this->firstPlayerScore === 1 || $this->firstPlayerScore === 2) {
+        if ($this->firstPlayerScore >= 1) {
             return "{$this->scoreLookup[$this->firstPlayerScore]} Love";
         }
 
