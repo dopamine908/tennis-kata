@@ -117,7 +117,7 @@ class Game10Test extends TestCase
     {
         $this->givenDeuce();
         $this->givenFirstPlayerScore(1);
-        $this->scoreShouldBe('First Player Win');
+        $this->scoreShouldBe('First Player Adv');
     }
 
 
@@ -128,7 +128,18 @@ class Game10Test extends TestCase
     {
         $this->givenDeuce();
         $this->givenSecondPlayerScore(1);
-        $this->scoreShouldBe('Second Player Win');
+        $this->scoreShouldBe('Second Player Adv');
+    }
+
+
+    /**
+     * @test
+     */
+    public function first_player_win()
+    {
+        $this->givenDeuce();
+        $this->givenFirstPlayerScore(2);
+        $this->scoreShouldBe('First Player Win');
     }
 
     /**

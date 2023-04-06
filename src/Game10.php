@@ -26,13 +26,17 @@ class Game10
 
         if ($this->firstPlayerScore > 3) {
             if ($this->firstPlayerScore - $this->secondPlayerScore === 1) {
+                return 'First Player Adv';
+            }
+
+            if ($this->firstPlayerScore - $this->secondPlayerScore === 2) {
                 return 'First Player Win';
             }
         }
 
         if ($this->secondPlayerScore > 3) {
             if ($this->secondPlayerScore - $this->firstPlayerScore === 1) {
-                return 'Second Player Win';
+                return 'Second Player Adv';
             }
         }
 
