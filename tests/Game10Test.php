@@ -99,6 +99,16 @@ class Game10Test extends TestCase
         $this->scoreShouldBe('Thirty All');
     }
 
+
+    /**
+     * @test
+     */
+    public function deuce()
+    {
+        $this->givenDeuce();
+        $this->scoreShouldBe('Deuce');
+    }
+
     /**
      * @param $score
      * @return void
@@ -134,6 +144,15 @@ class Game10Test extends TestCase
         for ($i = 0; $i < $times; $i++) {
             $this->game->addSecondPlayerScore();
         }
+    }
+
+    /**
+     * @return void
+     */
+    private function givenDeuce(): void
+    {
+        $this->givenFirstPlayerScore(3);
+        $this->givenSecondPlayerScore(3);
     }
 
 }
