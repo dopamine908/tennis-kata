@@ -31,6 +31,12 @@ class Game11
             }
         }
 
+        if ($this->secondPayerScore > 3) {
+            if ($this->secondPayerScore - $this->firstPlayerScore === 1) {
+                return 'Second Player Adv';
+            }
+        }
+
         return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPayerScore]}";
     }
 
