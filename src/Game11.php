@@ -29,6 +29,9 @@ class Game11
             if ($this->firstPlayerScore - $this->secondPayerScore === 1) {
                 return 'First Player Adv';
             }
+            if ($this->firstPlayerScore - $this->secondPayerScore >= 2) {
+                return 'First Player Win';
+            }
         }
 
         if ($this->secondPayerScore > 3) {
