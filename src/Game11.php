@@ -21,6 +21,11 @@ class Game11
             if ($this->firstPlayerScore === 1) {
                 return 'Fifteen All';
             }
+
+            if ($this->firstPlayerScore === 2) {
+                return 'Thirty All';
+            }
+
             return 'Love All';
         }
 
