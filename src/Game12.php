@@ -10,7 +10,7 @@ class Game12
         'Love',
         'Fifteen',
         'Thirty',
-
+        'Forty'
     ];
 
     public function score()
