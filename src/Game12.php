@@ -24,6 +24,12 @@ class Game12
             return "{$this->scoreLookup[$this->firstPlayerScore]} All";
         }
 
+        if ($this->firstPlayerScore > 3) {
+            if ($this->firstPlayerScore - $this->secondPlayerScore === 1) {
+                return 'First Player Adv';
+            }
+        }
+
         return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
 
     }
