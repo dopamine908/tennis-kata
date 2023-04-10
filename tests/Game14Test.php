@@ -141,6 +141,17 @@ class Game14Test extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function second_player_win()
+    {
+        $this->givenDeuce();
+        $this->givenSecondPlayerScore(2);
+        $this->scoreShouldBe('Second Player Win');
+
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
