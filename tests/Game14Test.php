@@ -23,9 +23,8 @@ class Game14Test extends TestCase
      */
     public function fifteen_love()
     {
-        $this->game->addFirstPlayerScore();
+        $this->givenFirstPlayerScore(1);
         $this->scoreShouldBe('Fifteen Love');
-
     }
 
     /**
@@ -33,9 +32,18 @@ class Game14Test extends TestCase
      */
     public function thirty_love()
     {
-        $this->game->addFirstPlayerScore();
-        $this->game->addFirstPlayerScore();
+        $this->givenFirstPlayerScore(2);
         $this->scoreShouldBe('Thirty Love');
+
+    }
+
+    /**
+     * @test
+     */
+    public function forty_love()
+    {
+        $this->givenFirstPlayerScore(3);
+        $this->scoreShouldBe('Forty Love');
 
     }
 
@@ -52,5 +60,16 @@ class Game14Test extends TestCase
     private function scoreShouldBe($score): void
     {
         $this->assertEquals($score, $this->game->score());
+    }
+
+    /**
+     * @param $times
+     * @return void
+     */
+    private function givenFirstPlayerScore($times): void
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $this->game->addFirstPlayerScore();
+        }
     }
 }
