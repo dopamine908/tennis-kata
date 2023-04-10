@@ -108,6 +108,17 @@ class Game14Test extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function first_player_adv()
+    {
+        $this->givenDeuce();
+        $this->givenFirstPlayerScore(1);
+        $this->scoreShouldBe('First Player Adv');
+
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
