@@ -66,6 +66,16 @@ class Game14Test extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function love_forty()
+    {
+        $this->givenSecondPlayerScore(3);
+        $this->scoreShouldBe('Love Forty');
+
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
