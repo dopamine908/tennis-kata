@@ -130,6 +130,17 @@ class Game14Test extends TestCase
 
     }
 
+    /**
+     * @test
+     */
+    public function first_player_win()
+    {
+        $this->givenDeuce();
+        $this->givenFirstPlayerScore(2);
+        $this->scoreShouldBe('First Player Win');
+
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
