@@ -21,11 +21,14 @@ class Game15
                 return 'Fifteen All';
             }
 
+            if ($this->firstPlayerScore === 2) {
+                return 'Thirty All';
+            }
+
             return 'Love All';
         }
-        if ($this->firstPlayerScore >= 1 || $this->secondPlayerScore >= 1) {
-            return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
-        }
+
+        return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
     }
 
     public function addFirstPlayerScore()
