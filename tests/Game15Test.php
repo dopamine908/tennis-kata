@@ -120,6 +120,16 @@ class Game15Test extends TestCase
         $this->scoreShouldBe('Second Player Adv');
     }
 
+    /**
+     * @test
+     */
+    public function first_player_win()
+    {
+        $this->givenDeuce();
+        $this->givenFirstPlayerScore(2);
+        $this->scoreShouldBe('First Player Win');
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
