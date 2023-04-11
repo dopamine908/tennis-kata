@@ -30,6 +30,12 @@ class Game15
             }
         }
 
+        if ($this->secondPlayerScore > 3) {
+            if ($this->secondPlayerScore - $this->firstPlayerScore === 1) {
+                return 'Second Player Adv';
+            }
+        }
+
         return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
     }
 
