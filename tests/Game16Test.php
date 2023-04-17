@@ -49,8 +49,17 @@ class Game16Test extends TestCase
      */
     public function love_fifteen()
     {
-        $this->game->addSecondPlayerScore();
+        $this->givenSecondPlayerScore(1);
         $this->scoreShouldBe('Love Fifteen');
+    }
+
+    /**
+     * @test
+     */
+    public function love_thirty()
+    {
+        $this->givenSecondPlayerScore(2);
+        $this->scoreShouldBe('Love Thirty');
     }
 
     protected function setUp(): void
@@ -76,6 +85,17 @@ class Game16Test extends TestCase
     {
         for ($i = 0; $i < $times; $i++) {
             $this->game->addFirstPlayerScore();
+        }
+    }
+
+    /**
+     * @param $times
+     * @return void
+     */
+    private function givenSecondPlayerScore($times): void
+    {
+        for ($i = 0; $i < $times; $i++) {
+            $this->game->addSecondPlayerScore();
         }
     }
 }
