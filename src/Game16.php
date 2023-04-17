@@ -18,15 +18,11 @@ class Game16
     public function score()
     {
         if ($this->firstPlayerScore === $this->secondPlayerScore) {
-            if ($this->firstPlayerScore === 1) {
-                return 'Fifteen All';
+            if ($this->firstPlayerScore === 3) {
+                return 'Deuce';
             }
 
-            if ($this->firstPlayerScore === 2) {
-                return 'Thirty All';
-            }
-
-            return 'Love All';
+            return "{$this->scoreLookup[$this->firstPlayerScore]} All";
         }
 
         return "{$this->scoreLookup[$this->firstPlayerScore]} {$this->scoreLookup[$this->secondPlayerScore]}";
