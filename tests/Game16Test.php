@@ -81,6 +81,16 @@ class Game16Test extends TestCase
         $this->scoreShouldBe('Fifteen All');
     }
 
+    /**
+     * @test
+     */
+    public function thirty_all()
+    {
+        $this->givenFirstPlayerScore(2);
+        $this->givenSecondPlayerScore(2);
+        $this->scoreShouldBe('Thirty All');
+    }
+
     protected function setUp(): void
     {
         parent::setUp();
